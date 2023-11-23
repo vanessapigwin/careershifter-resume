@@ -1,16 +1,16 @@
-function Form({children}) {
+function GenForm({genInfo, onsubmit, onchange}) {
+    function handleSubmit(e) {
+        e.preventDefault()
+        onsubmit()
+        console.log(genInfo)
+    }
+
     return (
-        <form>
-            {children}
+        <form onSubmit={handleSubmit}>
+            <input onChange={onchange} value={genInfo.value} placeholder={genInfo.desc}></input>
             <button type="submit">Submit</button>
         </form>
     )
 }
 
-function TextField({name, placeholder=''}) {
-    return (
-        <input type="text" name={name} id={name} placeholder={placeholder}/>
-    )
-}
-
-export {TextField, Form}
+export default GenForm

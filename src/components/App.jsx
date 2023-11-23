@@ -1,16 +1,26 @@
 import '../styles/App.css'
-import {Form, TextField} from './Form.jsx'
-import SectionCard from './Cards'
+import inputElemGen from './datafields'
+import { useState } from 'react'
+import GenForm from './Form.jsx'
+
 
 
 function App() {
+  const [genInfo, setGenInfo] = useState(inputElemGen[0]);
+  const [displayedInfo, setDisplayedInfo] = useState({})
+
+  function handleChange(e) {
+    setGenInfo({...genInfo, value:e.target.value})
+  }
+
+  function handleSubmit() {
+    setDisplayedInfo(genInfo)
+  }
 
   return (
     <>
-    <h2>General Information</h2>
-    <Form>
-      <TextField name='name' placeholder='name'/>
-    </Form>
+      <GenForm genInfo={genInfo} onsubmit={handleSubmit} onchange={handleChange}></GenForm>
+      <p>{displayedInfo.value}</p>
     </>
   )
 }
