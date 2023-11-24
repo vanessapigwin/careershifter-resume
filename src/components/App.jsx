@@ -4,25 +4,24 @@ import { useState } from 'react'
 import GenForm from './Form.jsx'
 
 
-
 function App() {
-  const [genInfo, setGenInfo] = useState(inputElemGen[0]);
+  const [formData, setFormData] = useState(inputElemGen)
   const [displayedInfo, setDisplayedInfo] = useState({})
 
-  function handleChange(e) {
-    setGenInfo({...genInfo, value:e.target.value})
-  }
-
-  function handleSubmit() {
-    setDisplayedInfo(genInfo)
+  function updateDisplay() {
+    setDisplayedInfo(formData)
   }
 
   return (
     <>
-      <GenForm genInfo={genInfo} onsubmit={handleSubmit} onchange={handleChange}></GenForm>
-      <p>{displayedInfo.value}</p>
+      <GenForm
+        formData={formData} 
+        setFormData={setFormData}
+        updateDisplay={updateDisplay}
+      />
+      <p>{displayedInfo['name'].value}</p>
     </>
   )
 }
 
-export default App
+export default App 

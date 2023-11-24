@@ -1,26 +1,21 @@
-const inputElemGen = [
-  {
-    name: "name",
+const inputElemGen = {
+  name: {
     value: "",
     desc: "Name",
   },
-  {
-    name: "headline",
+  headline: {
     value: "",
     desc: "Job title",
   },
-  {
-    name: "email",
+  email: {
     value: "",
     desc: "E-mail address",
-    type: "email",
   },
-  {
-    name: "phone",
+  phone: {
     value: "",
     desc: "Phone number",
     type: "tel",
   },
-];
+};
 
 export default inputElemGen;
