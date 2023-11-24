@@ -1,7 +1,6 @@
-function GenForm({formData, setFormData, updateDisplay}) {
+function GenForm({formData, setFormData}) {
     function handleSubmit(e) {
         e.preventDefault()
-        updateDisplay(formData)
         console.log(formData)
     }
 
