@@ -1,4 +1,4 @@
-form {
+form, label {
     display: flex;
     flex-direction: column;
 }
@@ -6,4 +6,9 @@ form {
 .form-card {
     padding: 20px;
     border: solid 1px rebeccapurple;
+}
+
+.content-card {
+    padding: 20px;
+    border: solid 1px red;
 }

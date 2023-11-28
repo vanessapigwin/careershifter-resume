@@ -1,7 +1,13 @@
 function FormCard({children}) {
     return (
-        <div className='form-card'>{children}</div>
+        <section className='form-card'>{children}</section>
     )
 }
 
-export default FormCard
+function ContentCard({children}) {
+    return (
+        <section className="content-card">{children}</section>
+    )
+}
+
+export {FormCard, ContentCard}
